@@ -1,68 +1,29 @@
 # APIGEE - Backup Tool
 
-**The tool can backup Apigee Api Proxies, Shared flows, Api Products etc**
+**This Cli tool can backup Apigee Api Proxies, Shared flows, Api Products, Developers, Developer apps, custom reports, Flow hooks and Target servers**
 
-> NOTE: The Script is tested and works perfectly on Linux(ubuntu) and nodejs version >16
+> NOTE: The cli tool is tested  on Linux(ubuntu) machine with nodejs version >16
 
 ### Prerequisite
 
 1. Download [gcloud](https://cloud.google.com/sdk/docs/install)
 
-2. Install [nodejs](https://nodejs.org/)
-   
-3. Clone the repository
+2. Install [nodejs](https://nodejs.org/) - version > 16
 
-4. Create a directory where you want to backup all apigee objects
+3. Create a directory where you want to backup all apigee objects
 
 ### Getting Started
 
-There are 2 ways you can run the apigee-backup-script. 
-1. Using npm scripts
-2. As a cli tool
-
-#### Using npm scripts
-
-1. run  `gcloud auth application-default login`
-
-2. run `npm install` to install all the dependencies, from inside the respository where package.json file is located
-
-3. update organization(apigee organization- you will find this in the top left dropdown in the apigee console/ project id in the GCP console ), backupFolderPath (path of the backup folder , add "/" at the end of the path) in config.json
-
-4. Run below npm scripts as per requirement
-
-run `npm run backupAll` to backup Api Proxy, Api product,developer apps , developers, target server etc
-
-run `npm run backupApiProxy` to backup Api Proxies
-
-run `npm run backupSharedFlow` to backup Shared Flows
-
-run `npm run backupApiProduct` to backup Api Products
-
-run `npm run backupDev` to backup Developers
-
-run `npm run backupDevApp` to backup Developer App
-
-run `npm run backupCustomReports` to backup Custom Reports
-
-run `npm run backupFlowHooks --envName=env-name` to backup Flow Hooks for a specific environment
-
-run `npm run backupTargetServer --envName=env-name` to backup Custom Reports for a specific environment
-
-5. Run step 1 and step 3 everytime you want to switch between gcp accounts and apigee organization
-
-#### As a cli tool
-
-1. run `npm install` to install all the dependencies, from inside the respository where package.json file is located
-
-2. run `npm install -g .` to install the script as a global npm package
+1. run `npm install -g @niveus/apigee-backup-tool` to install the script as a global npm package
    
-3. Now you can run the script as a cli tool from anywhere from your ubuntu machine
+2. Now you can run the script as a cli tool from anywhere from your ubuntu machine
 
-4. run `apigee-backup-tool login` to authenticate with google cloud
+3. run `apigee-backup-tool login` to authenticate with google cloud
 
-5. run `apigee-backup-tool config set --orgName name-of-organization --backupFolderPath /path/to/backup/folder/` to configure the apigee organization name and backup folder path
+4. run `apigee-backup-tool config set --orgName name-of-organization --backupFolderPath /path/to/backup/folder/` to configure the apigee organization name and backup folder path
+   > Note. Add "/" at the end of the folder path
 
-6. run `apigee-backup-tool --help` to get help on all the available commands
+5. run `apigee-backup-tool --help` to get help on all the available commands
 
 ```
 Usage: apigee-backup-tool [options] [command]
@@ -139,7 +100,7 @@ Commands:
         apigee-backup-tool backup target-server --envName environment-name
     ```
 
-8. Run step 4 and step 5 everytime you want to switch between gcp accounts and apigee organization
+8. Run step 3 and step 4 everytime you want to switch between gcp accounts and apigee organization
 
  
 
