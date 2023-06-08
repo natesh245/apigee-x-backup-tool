@@ -11,10 +11,8 @@
 1. Download [gcloud](https://cloud.google.com/sdk/docs/install)
 
 2. Install [nodejs](https://nodejs.org/)
-   
-3. Clone the repository
 
-4. Create a directory where you want to backup all apigee objects
+3. Create a directory where you want to backup all apigee objects
 
 ### Getting Started
 
